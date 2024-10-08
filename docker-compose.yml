@@ -1,0 +1,10 @@
+version: '3'
+services:
+  air_check_datasecurity:
+    build: .
+    ports:
+      - "20081:80"
+    environment:
+      - DASFLAG=DASCTF{7c5ccdd64de34ba36e38b4f3a474a99a}
+    # volumes:
+    #   - "./web:/app/"
