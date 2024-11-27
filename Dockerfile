@@ -27,7 +27,8 @@ RUN nginx -t && \
     service nginx restart && \
     chmod 666 /var/log/nginx/access.log
 
-ENV DASFLAG=DASCTF{das_air_test}
+# 注意: 动态 flag 必须在 Dockerfile 里的 DASFLAG 环境变量里进行定义，一定不要在 docker-compose.yml 里进行定义
+ENV DASFLAG=DASCTF{8e551a8f3959ef14c1c9eb8f1f5f68d6}
 
 # 设置环境变量 TZ 为 Asia/Shanghai
 # ENV TZ=Asia/Shanghai
