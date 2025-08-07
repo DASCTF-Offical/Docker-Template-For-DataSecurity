@@ -8,7 +8,7 @@
 ├── docker-compose.yml
 ├── example-files              # 示例文件（使用该 dockerfile 进行投题时记得删除）
 ├── files                      # 配置文件相关
-├── readme.md									 # 说明文件（使用该 dockerfile 进行投题时记得删除）
+├── readme.md                  # 说明文件（使用该 dockerfile 进行投题时记得删除）
 └── web                        # web目录，后端代码
     ├── answer.csv
     ├── app.py
