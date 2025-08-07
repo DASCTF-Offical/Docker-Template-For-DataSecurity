@@ -6,9 +6,9 @@
 .
 ├── Dockerfile
 ├── docker-compose.yml
-├── example-files              # 示例文件
+├── example-files              # 示例文件（使用该 dockerfile 进行投题时记得删除）
 ├── files                      # 配置文件相关
-├── readme.md
+├── readme.md									 # 说明文件（使用该 dockerfile 进行投题时记得删除）
 └── web                        # web目录，后端代码
     ├── answer.csv
     ├── app.py
@@ -41,7 +41,7 @@ ENV DASFLAG=DASCTF{8e551a8f3959ef14c1c9eb8f1f5f68d6}
 
 
 
-其中 example-files 里给出了三种格式 csv、txt、tar.gz 的比较示例
+其中 example-files 里给出了三种格式 csv、txt、tar.gz 的比较示例（**使用该 dockerfile 进行投题时记得删除**）
 
 ```bash
 .
@@ -97,4 +97,8 @@ def compare_file_targz(update_file_path):
     ......
 ```
 
-作为出题人，出类似这种文件比较的题目，使用本模板的话，重点关注 **web/check_func.py** 文件。依据变量 file_format_list 来修改对应函数，譬如 `file_format_list = ['csv']`，则只需要修改 compare_file_csv 函数即可，compare_file_txt、compare_file_targz 将不会被使用到。若验证规则无变化，则直接原样采用模板提供的 compare_file_csv 函数即可，只需修改同一目录下的 answer.csv 和 example.csv 文件即可。
+作为出题人，出类似这种文件比较的题目，使用本模板的话，重点关注 **web/check_func.py** 文件。依据变量 file_format_list 来修改对应函数，譬如 `file_format_list = ['csv']`，则只需要修改 compare_file_csv 函数即可，compare_file_txt、compare_file_targz 将不会被使用到。
+
+**若验证规则无变化，则直接原样采用模板提供的 compare_file_csv 函数即可，只需修改同一目录下的 answer.csv 和 example.csv 文件即可**。
+
+**使用该 dockerfile 模板进行投题时记得删除 example-files 文件夹和 readme.md 文件**。
