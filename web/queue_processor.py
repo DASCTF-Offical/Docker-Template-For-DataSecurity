@@ -1,4 +1,5 @@
 import os
+import shutil
 import redis
 import json
 from check_func import compare_file_csv, compare_file_txt, compare_file_targz
@@ -42,6 +43,11 @@ def process_queue():
             print(e)  # 打印异常信息
             result['reason'] = str(e)
         finally:
+            if os.path.exists(file_path):
+                os.remove(file_path)
+            extract_path = os.path.splitext(file_path)[0]
+            if os.path.isdir(extract_path):
+                shutil.rmtree(extract_path)
             result['state'] = 1
             redis_client.hset('results', key, json.dumps(result))
 
