@@ -24,7 +24,8 @@ RUN cd /tmp && \
     mv /tmp/supervisor_app.conf /etc/supervisor/conf.d/app.conf && \
     mv /tmp/healthcheck.py /usr/local/bin/checker-healthcheck.py && \
     mv /tmp/nginx-supervisor.sh /usr/local/bin/nginx-supervisor.sh && chmod +x /usr/local/bin/nginx-supervisor.sh && \
-    mv start.sh /start.sh && chmod +x /start.sh
+    mv start.sh /start.sh && chmod +x /start.sh  && \
+    chmod -R 777 /dist
 
 RUN sed -i '/^logfile=\/var\/log\/supervisor\/supervisord.log/a logfile_maxbytes=1MB\nlogfile_backups=1\nuser=root' /etc/supervisor/supervisord.conf
 
