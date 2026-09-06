@@ -36,7 +36,7 @@ def get_flag():
         with open('/tmp/flag', 'r') as f:
             flag_true = f.read().strip()
     except FileNotFoundError:
-        flag_true = 'DASCTF{you_get_flag_but_flag_file_not_found}'
+        flag_true = 'you_get_flag_but_flag_file_not_found'
     return flag_true
 FLAG_TRUE = get_flag()
 
